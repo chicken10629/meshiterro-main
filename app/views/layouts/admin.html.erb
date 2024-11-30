@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Admin - Meshiterro</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+  <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
+<body>
+  <% if admin_sined_in? %>
+    <div class="text-right">
+      <%= link_to 'ログアウト', destroy_admin_session_path, method: :delete %>
+    </div>
+  <% end %>
+  <%= yield %>
+</body>
+</html>
+<!-- テンプレートを有効にするために、コントローラー側にlayoutファイル名を指定 -->
